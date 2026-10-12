@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f0e7">
+  <title>사과게임 | 합이 10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="intro" aria-labelledby="game-title">
+      <p class="eyebrow">NUMBER HARVEST · 01</p>
+      <h1 id="game-title">사과게임</h1>
+      <p class="subtitle">인접한 숫자를 이어 합을 10의 배수로 만들어 보세요.</p>
+    </section>
+
+    <section class="game-panel" aria-label="게임 영역">
+      <div class="scoreboard">
+        <div class="score-card score-card--main">
+          <span class="score-label">현재 점수</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="score-card">
+          <span class="score-label">최고 점수</span>
+          <strong id="high-score">0</strong>
+        </div>
+        <div class="score-card timer-card">
+          <span class="score-label">남은 시간</span>
+          <strong id="time">01:00</strong>
+        </div>
+      </div>
+
+      <div class="game-toolbar">
+        <p id="status" class="status" role="status" aria-live="polite">숫자를 드래그해 합을 만들어 보세요.</p>
+        <button id="new-game" class="new-game-button" type="button">새 게임</button>
+      </div>
+
+      <div id="board" class="board" role="grid" aria-label="8 곱하기 8 숫자 격자"></div>
+      <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+      <div id="game-over" class="game-over" hidden>
+        <p class="game-over-kicker">TIME'S UP</p>
+        <h2>수확 완료!</h2>
+        <p>이번 게임에서 <strong id="final-score">0</strong>점을 얻었습니다.</p>
+        <button id="restart-game" class="restart-button" type="button">다시 시작하기</button>
+      </div>
+    </section>
+
+    <footer class="rules">
+      <span>상하좌우로 연결</span>
+      <span>합이 10의 배수면 제거</span>
+      <span>플레이 시간 60초</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
